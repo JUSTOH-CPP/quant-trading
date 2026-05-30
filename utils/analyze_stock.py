@@ -13,13 +13,13 @@ def analyze_stock(ticker, start="2022-01-01", end="2024-12-31"):
     sharpe     = ann_return / ann_vol
 
     stats = {
-        "ticker"      : ticker,
-        "ann_return"  : ann_return,
-        "ann_vol"     : ann_vol,
-        "sharpe"      : sharpe,
-        "worst_day"   : returns.min(),
-        "best_day"    : returns.max(),
-        "total_return": (price.iloc[-1] / price.iloc[0]) - 1,
+        "ticker"       : ticker,
+        "ann_return"   : ann_return,
+        "ann_vol"      : ann_vol,
+        "sharpe"       : sharpe,
+        "worst_day"    : returns.min(),
+        "best_day"     : returns.max(),
+        "total_return" : (price.iloc[-1] / price.iloc[0]) - 1,
     }
 
     print(f"\n{'='*40}")
@@ -40,7 +40,7 @@ def analyze_stock(ticker, start="2022-01-01", end="2024-12-31"):
     ax1.plot(sma50, lw=1.5, color="#f97316",
              linestyle="--", label="50-day SMA")
     ax1.legend()
-    ax1.set_title(f"{ticker} — Ann. Return {ann_return:.1%} | Sharpe {sharpe:.2f}")
+    ax1.set_title(f"{ticker} -- Ann. Return {ann_return:.1%} | Sharpe {sharpe:.2f}")
     ax1.grid(True, alpha=0.3)
     ax2.bar(df.index, df["Volume"], color="#94a3b8", alpha=0.7)
     ax2.set_ylabel("Volume")

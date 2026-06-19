@@ -1,11 +1,10 @@
-name: quant-trading
+name: base
 channels:
   - conda-forge
   - defaults
 dependencies:
   - python=3.10
   - pip
-  - flake8
-  - pytest
   - pip:
-    - -r requirements.txt
+    - pytest
+    - flake8
